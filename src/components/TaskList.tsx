@@ -5,16 +5,7 @@ import Task from "./Task";
 const TaskList = () => {
     return (
         <section id="" className="">
-            <div className="">
-                <div className="bg-gray-300">
-                    <h2 className="">card title</h2>
-                    <p className="">text</p>
-                    <input></input>
-                    <button className="bg-blue-400">button 1</button>
-                    <button className="bg-red-400">button 2</button>
-                </div>
-
-                <Task />
+            <div className="bg-yellow-300">
             </div>
         </section>
     );

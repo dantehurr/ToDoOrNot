@@ -4,8 +4,8 @@ import TaskSheet from "@/components/TaskSheet";
 
 export default function Home() {
   return (
-    <main>
-      <div>
+    <main className="mx-10 my-40">
+      <div className="lg:flex lg:justify-center my-auto">
         <TaskSheet />
       </div>
     </main>
