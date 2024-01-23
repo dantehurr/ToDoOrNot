@@ -14,9 +14,19 @@ uuidv4();
 const TaskSheet = () => {
     const [ tasks, setTasks ] = useState<any[]>([]);
 
-    const addTask = task => {
-        setTasks([...tasks, { id: uuidv4(), todo: task, completed: false, isEditing: false }])
+    useEffect(() => {
+        const storedTasks: any = JSON.parse(localStorage.getItem('taskKey'));
+
+        if ( storedTasks ) {
+            setTasks(storedTasks);
+        }
+    }, []);
+
+    const addTask = ( task ) => {
+        const newTask = { id: uuidv4(), todo: task, completed: false, isEditing: false };
+        setTasks([ ...tasks, newTask ]);
         console.log(tasks);
+        localStorage.setItem('taskKey', JSON.stringify([ ...tasks, newTask ]));
     }
 
     return (
@@ -24,7 +34,7 @@ const TaskSheet = () => {
             <div id="" className="">
                 <TaskForm addTask={addTask} />
                 {tasks.map((task, index) => (
-                    <Task todo={task} key={index} />
+                    <Task todo={task.todo} id={task.id} key={task.id} />
                 ))}
                 {/* <TaskList /> */}
             </div>

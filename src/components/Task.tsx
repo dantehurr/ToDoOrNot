@@ -1,9 +1,9 @@
 import { FaPenToSquare, FaTrash } from 'react-icons/fa6';
 
-const Task = (todo) => {
+const Task = (task) => {
     return (
         <div className=''>
-            <p className=''>{todo.todo}</p>
+            <p className=''>{task.todo}</p>
             <div className=''>
                 <FaPenToSquare />
                 <FaTrash />
