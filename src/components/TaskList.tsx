@@ -1,5 +1,6 @@
 import Image from "next/image";
 import {} from 'react-icons/fa6';
+import Task from "./Task";
 
 const TaskList = () => {
     return (
@@ -12,6 +13,8 @@ const TaskList = () => {
                     <button className="bg-blue-400">button 1</button>
                     <button className="bg-red-400">button 2</button>
                 </div>
+
+                <Task />
             </div>
         </section>
     );
