@@ -49,9 +49,9 @@ const TaskSheet = () => {
         <main className="lg:w-[800px] bg-sky-300/30 dark:bg-slate-950 p-6 rounded-2xl lg:rounded-3xl">
             <div>
                 <TaskForm addTask={addTask} />
-                {tasks.map((task) => (
+                {tasks.map((todo) => (
                     <Task
-                    task={task}
+                    task={todo}
                     removeTask={removeTask} />
                 ))}
                 <div className="flex text-lg bg-slate-800 dark:bg-slate-300 rounded-full mt-9 lg:mb-1 w-fit px-3 text-blue-100 dark:text-gray-800">
