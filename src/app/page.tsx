@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TaskList from "@/components/TaskList";
+
 import TaskSheet from "@/components/TaskSheet";
 
 export default function Home() {
@@ -8,6 +8,9 @@ export default function Home() {
       <div className="lg:flex lg:justify-center my-auto">
         <TaskSheet />
       </div>
+      <footer className="flex justify-center pt-10">
+        <img className="w-28" src="/logo.svg"/>
+      </footer>
     </main>
   );
 }
