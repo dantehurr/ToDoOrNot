@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FaXmark } from 'react-icons/fa6';
 
-const Task = ( {task, removeTask} ) => {
+const Task = ( {task, removeTask} : {task:any, removeTask:any}) => {
 
     const handleRemoveTask = () => {
         removeTask(task.id);

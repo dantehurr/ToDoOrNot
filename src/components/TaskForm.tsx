@@ -5,10 +5,10 @@ import React, { useState } from "react";
 import { FaPlus } from 'react-icons/fa6';
 
 
-const TaskForm = ( {addTask} ) => {
+const TaskForm = ( {addTask} : {addTask:any}) => {
     const [ value, setValue ] = useState("");
 
-    const handleSubmit = e => {
+    const handleSubmit = (e:any) => {
         e.preventDefault();
 
         addTask(value);

@@ -14,14 +14,14 @@ const TaskSheet = () => {
     const [ tasks, setTasks ] = useState<any[]>([]);
 
     useEffect(() => {
-        const storedTasks: any = JSON.parse(localStorage.getItem('task'));
+        const storedTasks: any = JSON.parse(localStorage.getItem('task') || '{}');
 
         if ( storedTasks ) {
             setTasks(storedTasks);
         }
     }, []);
 
-    const addTask = ( task ) => {
+    const addTask = ( task:any ) => {
         const newTask = { 
             id: uuidv4(), 
             todo: task, 
@@ -35,11 +35,11 @@ const TaskSheet = () => {
         setTasks([]);
     }
 
-    const updateLocalStorage = (updateTasks) => {
+    const updateLocalStorage = ( updateTasks:any ) => {
         localStorage.setItem('task', JSON.stringify(updateTasks));
     }
 
-    const removeTask = ( taskId ) => {
+    const removeTask = ( taskId:any ) => {
         const updateTasks = tasks.filter((task) => task.id !== taskId);
         setTasks(updateTasks);
         updateLocalStorage(updateTasks);
@@ -52,7 +52,6 @@ const TaskSheet = () => {
                 {tasks.map((task) => (
                     <Task
                     task={task}
-                    id={task.id} 
                     removeTask={removeTask} />
                 ))}
                 <div className="flex text-lg bg-slate-800 dark:bg-slate-300 rounded-full mt-9 lg:mb-1 w-fit px-3 text-blue-100 dark:text-gray-800">
