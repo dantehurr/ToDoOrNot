@@ -39,10 +39,14 @@ const TaskSheet = () => {
         setTasks([]);
     }
 
+    const updateLocalStorage = (updateTasks) => {
+        localStorage.setItem('task', JSON.stringify(updateTasks));
+    }
+
     const removeTask = ( taskId ) => {
-        //var taskKey = task.id;
-        setTasks(tasks.filter((task) => task.id !== taskId));
-        //localStorage.removeItem(taskKey);
+        const updateTasks = tasks.filter((task) => task.id !== taskId);
+        setTasks(updateTasks);
+        updateLocalStorage(updateTasks);
     }
 
     return (
