@@ -14,7 +14,7 @@ const TaskSheet = () => {
     const [ tasks, setTasks ] = useState<any[]>([]);
 
     useEffect(() => {
-        const storedTasks: any = JSON.parse(localStorage.getItem('task') || '{}');
+        const storedTasks: any = JSON.parse(localStorage.getItem('task') || '[]');
 
         if ( storedTasks ) {
             setTasks(storedTasks);
